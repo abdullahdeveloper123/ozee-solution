@@ -130,7 +130,7 @@ export default function TenderBidEstimates({ onNavigate, onOpenEstimationTool }:
               <div className="absolute -inset-2 bg-yellow-500 rounded-2xl opacity-10 group-hover:opacity-20 transition-opacity blur" />
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
                 <img 
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80" 
+                  src="https://ozestimatesolutions.com.au/wp-content/uploads/2024/11/businessman-talking-phone-scaled.jpg" 
                   alt="Smiling businessman crossed arms with project layout background" 
                   className="w-full h-full object-cover max-h-[480px] filter hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"

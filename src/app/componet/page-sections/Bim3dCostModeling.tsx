@@ -168,7 +168,7 @@ export default function Bim3dCostModeling({ onNavigate, onOpenEstimationTool }: 
               <ScrollReveal variant="fadeLeft" className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/5 relative">
                   <img 
-                    src="https://images.unsplash.com/photo-1512403754473-278556139b0a?auto=format&fit=crop&w=800&q=80" 
+                    src="https://ozestimatesolutions.com.au/wp-content/uploads/2024/11/construction-tall-concrete-pylon-bridge-using-tower-crane-scaled.jpg" 
                     alt="Workmen reviewing 3D structure details" 
                     className="w-full object-cover max-h-[440px] filter brightness-[0.85]"
                     referrerPolicy="no-referrer"

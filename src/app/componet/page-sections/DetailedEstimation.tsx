@@ -311,31 +311,31 @@ export default function DetailedEstimation({ onNavigate, onOpenEstimationTool }:
               <div className="absolute -bottom-3 -right-3 w-12 h-12 border-b-2 border-r-2 border-yellow-500 rounded-br-xl pointer-events-none" />
 
               {/* The second rotating badge overlapping the image (Just like in picture 1 mockup!) */}
-              <div 
+              {/* <div 
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-yellow-500 text-slate-950 rounded-full shadow-2xl flex flex-col items-center justify-center w-28 h-28 z-20 border-4 border-slate-900 select-none overflow-hidden group cursor-pointer hover:scale-105 transition-transform"
                 onClick={onOpenEstimationTool}
-              >
+              > */}
                 {/* Rotating Dashed outer ring */}
-                <div 
+                {/* <div 
                   className="absolute inset-1.5 border border-dashed border-slate-950/30 rounded-full animate-[spin_10s_linear_infinite]" 
-                />
+                /> */}
                 
-                {/* Rotating OZ Logo Silhouette */}
-                <div className="absolute inset-3 opacity-10 animate-[spin_15s_linear_infinite] flex items-center justify-center">
+             
+                {/* <div className="absolute inset-3 opacity-10 animate-[spin_15s_linear_infinite] flex items-center justify-center">
                   <OZLogoBadge className="w-full h-full text-slate-950" />
-                </div>
+                </div> */}
 
-                {/* Content */}
-                <div className="relative z-10 text-center flex flex-col items-center justify-center">
-                  {/* Rotating OZ Brand icon */}
+            
+                {/* <div className="relative z-10 text-center flex flex-col items-center justify-center">
+                
                   <div className="w-5 h-5 mb-0.5 flex items-center justify-center animate-[spin_12s_linear_infinite]">
                     <OZLogoBadge className="w-full h-full text-slate-950" />
                   </div>
                   <span className="text-xl font-black font-display tracking-tighter leading-none">25+</span>
                   <span className="text-[7.5px] uppercase font-mono font-extrabold tracking-widest leading-none mt-0.5">Years Exp</span>
                   <span className="text-[7px] text-slate-800 font-sans font-bold leading-none mt-0.5 block">ESTIMATION</span>
-                </div>
-              </div>
+                </div> */}
+              {/* </div> */}
             </div>
 
             {/* Right Column: Title and specifications */}

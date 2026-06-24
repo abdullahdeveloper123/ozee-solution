@@ -138,7 +138,7 @@ export default function MepHvacEstimation({ onNavigate, onOpenEstimationTool }: 
               
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
                 <img 
-                  src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80" 
+                  src="https://ozestimatesolutions.com.au/wp-content/uploads/2024/11/construction-silhouette-1-scaled.jpg" 
                   alt="HVAC Estimator working on blueprints" 
                   className="w-full h-full object-cover max-h-[480px] filter hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
@@ -164,7 +164,7 @@ export default function MepHvacEstimation({ onNavigate, onOpenEstimationTool }: 
               <ScrollReveal variant="fadeLeft" className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/5 relative">
                   <img 
-                    src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" 
+                    src="https://ozestimatesolutions.com.au/wp-content/uploads/2024/11/man-making-measurements-building-scaled.jpg" 
                     alt="Workmen reviewing details" 
                     className="w-full object-cover max-h-[440px] filter brightness-[0.85]"
                     referrerPolicy="no-referrer"
@@ -415,7 +415,7 @@ export default function MepHvacEstimation({ onNavigate, onOpenEstimationTool }: 
         {/* Manifold valves background */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=1200&q=80" 
+            src="https://ozestimatesolutions.com.au/wp-content/uploads/2024/11/construction-silhouette-scaled.jpg" 
             alt="Technical valves and manifold pressure gauges" 
             className="w-full h-full object-cover filter brightness-[0.15] contrast-[1.1]"
             referrerPolicy="no-referrer"

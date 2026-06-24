@@ -1,12 +1,12 @@
  'use client';
 
-import React, { createContext, type ReactNode, useContext, useState } from 'react';
+import React, { createContext, type ReactNode, useContext, useState, useEffect } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import Header from './app/componet/common/Header';
 import Footer from './app/componet/common/Footer';
 import Loader from './app/componet/common/Loader';
 import { PageRoute } from './types';
-import { Calculator, X, Sparkles, Check, ChevronRight, UploadCloud, AlertCircle } from 'lucide-react';
+import { Calculator, X, Sparkles, Check, ChevronRight, UploadCloud, AlertCircle, ArrowUp } from 'lucide-react';
 import { routePaths } from './config/routes';
 
 interface AppShellProps {
@@ -31,7 +31,22 @@ export default function App({ children }: AppShellProps) {
   const pathname = usePathname();
   const currentPath = (Object.entries(routePaths).find(([, path]) => path === pathname)?.[0] ?? 'home') as PageRoute;
   const [isNavigating, setIsNavigating] = useState(false);
-  
+
+  // Scroll-to-top button visibility
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   // Interactive Estimation Tool State
   const [isEstimatorOpen, setIsEstimatorOpen] = useState(false);
   const [estStep, setEstStep] = useState(1);
@@ -397,6 +412,17 @@ export default function App({ children }: AppShellProps) {
           </div>
         </div>
       )}
+
+      {/* Scroll-to-top button */}
+      <button
+        onClick={scrollToTop}
+        aria-label="Scroll to top"
+        className={`fixed bottom-6 right-6 z-50 w-12 h-12 bg-yellow-500 hover:bg-yellow-400 text-white flex items-center justify-center shadow-lg transition-all duration-300 cursor-pointer ${
+          showScrollTop ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'
+        }`}
+      >
+        <ArrowUp className="w-5 h-5" strokeWidth={2.5} />
+      </button>
 
     </div>
     </SiteNavigationContext.Provider>

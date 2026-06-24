@@ -130,7 +130,7 @@ export default function QuantityTakeOff({ onNavigate, onOpenEstimationTool }: Qu
                 <div className="absolute -inset-2 bg-yellow-500 rounded-2xl transform rotate-2 opacity-10"></div>
                 
                 <img 
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80" 
+                  src="https://ozestimatesolutions.com.au/wp-content/uploads/2024/11/faq-scaled.jpg" 
                   alt="Construction quantity estimator in suit" 
                   className="relative rounded-2xl shadow-xl border border-slate-100 max-w-full h-auto object-cover max-h-[480px]"
                 />
@@ -208,32 +208,35 @@ export default function QuantityTakeOff({ onNavigate, onOpenEstimationTool }: Qu
                 {/* Overlapping Image 2 */}
                 <div className="col-span-7 -mt-20 ml-auto z-10 border-4 border-white rounded-2xl shadow-xl overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" 
+                    src="https://ozestimatesolutions.com.au/wp-content/uploads/2024/11/crop-man-with-blueprints-helmet-scaled.jpg" 
                     alt="Blueprints construction site plans" 
                     className="object-cover w-full h-[200px]"
                   />
                 </div>
 
                 {/* Experience Badge with Rotating Logo and Elements */}
-                <div className="absolute right-2 bottom-2 sm:right-4 sm:bottom-4 bg-yellow-500 text-slate-950 rounded-full shadow-2xl flex flex-col items-center justify-center w-28 h-28 z-20 border-4 border-white select-none overflow-hidden group" id="qto-experience-badge">
+                <div className="absolute left-2 bottom-2 sm:left-4 sm:bottom-4 bg-yellow-500 text-slate-950 rounded-full shadow-2xl flex flex-col items-center justify-center w-28 h-28 z-20 border-4 border-white select-none group" id="qto-experience-badge">
                   {/* Rotating Outer Dashed/Dotted Ring */}
                   <div 
-                    className="absolute inset-1.5 border-2 border-dashed border-slate-950/20 rounded-full" 
-                    style={{ animation: 'spin 12s linear infinite' }} 
+                    className="absolute inset-1.5 border-2 border-dashed border-slate-950/20 rounded-full animate-spin"
+                    style={{ animationDuration: '12s', animationTimingFunction: 'linear' }}
                   />
                   
-                  {/* Rotating Logo Silhouette (OZ Building logo shape rotating clockwise) */}
+                  {/* Rotating Logo Silhouette */}
                   <div 
-                    className="absolute inset-3 flex items-center justify-center opacity-10"
-                    style={{ animation: 'spin 18s linear infinite' }}
+                    className="absolute inset-3 flex items-center justify-center opacity-10 animate-spin"
+                    style={{ animationDuration: '18s', animationTimingFunction: 'linear', animationDirection: 'reverse' }}
                   >
                     <OZLogoBadge className="w-full h-full text-slate-950" />
                   </div>
 
                   {/* Static Branding Content on top */}
                   <div className="relative z-10 flex flex-col items-center justify-center text-center">
-                    {/* Brand icon (the OZ building logo rotating inside) */}
-                    <div className="w-6 h-6 mb-0.5 flex items-center justify-center animate-[spin_12s_linear_infinite]">
+                    {/* Rotating OZ Logo icon */}
+                    <div
+                      className="w-6 h-6 mb-0.5 flex items-center justify-center animate-spin"
+                      style={{ animationDuration: '10s', animationTimingFunction: 'linear' }}
+                    >
                       <OZLogoBadge className="w-full h-full text-slate-950" />
                     </div>
                     <span className="text-xl font-black font-display tracking-tight leading-none">25+</span>
@@ -500,7 +503,7 @@ export default function QuantityTakeOff({ onNavigate, onOpenEstimationTool }: Qu
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1a2631]/85 via-transparent to-transparent z-10"></div>
                 
                 <img 
-                  src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80" 
+                  src="https://ozestimatesolutions.com.au/wp-content/uploads/2024/11/faq-2-scaled.jpg" 
                   alt="Construction cranes at dusk" 
                   className="w-full h-full object-cover relative"
                 />
