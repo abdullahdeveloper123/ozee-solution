@@ -80,8 +80,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
                     referrerPolicy="no-referrer"
                   />
                 </div>
-
-                {/* Gold Seal sticker badge overlay */}
+          {/* Gold Seal sticker badge overlay */}
                 <div className="absolute -bottom-4 left-1/3 transform -translate-x-1/2 z-20">
                   <div className="relative w-28 h-28 sm:w-32 sm:h-32 bg-yellow-500 rounded-full flex items-center justify-center shadow-lg shadow-yellow-500/30 animate-pulse">
                     <div className="absolute inset-1.5 border-2 border-dashed border-slate-900/30 rounded-full" />
