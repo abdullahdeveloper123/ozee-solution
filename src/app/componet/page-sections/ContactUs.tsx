@@ -1,267 +1,165 @@
-import React, { useState } from 'react';
-import { 
-  Phone, Mail, MapPin, Send, MessageSquareCode, 
-  Building, Clock, ExternalLink, ShieldCheck, CheckSquare 
-} from 'lucide-react';
-import ScrollReveal from '../common/ScrollReveal';
+'use client';
+
+import { useState, type FormEvent } from 'react';
+import { AnimatePresence, motion } from 'motion/react';
+import { ArrowRight, CheckCircle2, Clock3, Mail, MapPin, MessageSquareText, Phone, Send } from 'lucide-react';
+
+const contactDetails = [
+  {
+    icon: Phone,
+    label: 'Phone number',
+    value: '+1 (507) 778 1624',
+    href: 'tel:+15077781624',
+  },
+  {
+    icon: Mail,
+    label: 'Email address',
+    value: 'info@ozsolution.com',
+    href: 'mailto:info@ozsolution.com',
+  },
+  {
+    icon: MapPin,
+    label: 'Our location',
+    value: '15750 Fair Hill Way, Apple Valley, MN 55124, USA',
+  },
+];
+
+const initialForm = {
+  firstName: '',
+  lastName: '',
+  phone: '',
+  email: '',
+  service: 'quantity-takeoff',
+  message: '',
+};
 
 export default function ContactUs() {
-  const [activeBranch, setActiveBranch] = useState<'minnesota' | 'illinois' | 'texas'>('minnesota');
-  const [feedback, setFeedback] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    subject: 'takeoff',
-    note: ''
-  });
+  const [form, setForm] = useState(initialForm);
   const [sent, setSent] = useState(false);
 
-  // Address details based on Branch Toggle
-  const branchDetails = {
-    minnesota: {
-      address: '15750 Fair Hill Way Apple Valley, Minnesota 55124, USA',
-      phone: '+1 (507) 778 1624',
-      email: 'info@ozsolution.com',
-      hours: 'Mon - Fri: 9:00 AM - 5:00 PM',
-      coordinates: '44.7319° N, 93.2177° W'
-    },
-    illinois: {
-      address: '401 North Michigan Ave Chicago, Illinois 60611, USA',
-      phone: '+1 (312) 558 9021',
-      email: 'chicago@ozsolution.com',
-      hours: 'Mon - Fri: 8:30 AM - 5:30 PM',
-      coordinates: '41.8897° N, 87.6231° W'
-    },
-    texas: {
-      address: '1000 Louisiana St Houston, Texas 77002, USA',
-      phone: '+1 (713) 442 8110',
-      email: 'houston@ozsolution.com',
-      hours: 'Mon - Fri: 9:00 AM - 5:00 PM',
-      coordinates: '29.7589° N, 95.3698° W'
-    }
-  };
-
-  const handleForm = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     setSent(true);
-    setTimeout(() => {
-      setSent(false);
-      setFeedback({
-        name: '',
-        phone: '',
-        email: '',
-        subject: 'takeoff',
-        note: ''
-      });
-    }, 4000);
+    setForm(initialForm);
+    window.setTimeout(() => setSent(false), 5000);
   };
 
   return (
-    <div className="bg-[#f8fafc] text-slate-800 py-12 md:py-20" id="contact-us-view">
-      <div className="w-full px-4 sm:px-8 lg:px-12 space-y-16">
-        
-        {/* Banner Block */}
-        <ScrollReveal variant="fadeUp" duration={0.8} className="text-center max-w-2xl mx-auto space-y-4">
-          <span className="text-yellow-600 font-mono text-xs uppercase tracking-widest font-bold">GET IN TOUCH</span>
-          <h1 className="font-display font-extrabold text-3xl sm:text-5xl text-slate-900 tracking-tight leading-tight">
-            Connect with Our Senior Estimating Team
-          </h1>
-          <p className="text-xs sm:text-sm text-slate-500 font-sans leading-relaxed">
-            Whether you need a quick sheet quantity takeoff or seek structural 5D BIM Revit orchestration, we are fully staffed to handle your projects.
-          </p>
-        </ScrollReveal>
+    <main className="overflow-hidden bg-white text-slate-900" id="contact-us-view">
+      <section className="relative isolate min-h-[390px] overflow-hidden bg-slate-950 sm:min-h-[460px]">
+        <motion.div
+          initial={{ scale: 1.08, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.1, ease: 'easeOut' }}
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2200&q=85')" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/65 to-slate-900/35" />
+        <div className="absolute inset-0 bg-[linear-gradient(115deg,transparent_0%,rgba(234,179,8,0.16)_48%,transparent_72%)]" />
 
-        {/* Column Splits */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
-          {/* Information & Regional Branches Sidebar (5 cols) */}
-          <ScrollReveal variant="fadeRight" className="lg:col-span-5 space-y-8">
-            
-            {/* Quick Contact Info */}
-            <div className="bg-slate-900 text-white rounded-2xl p-6 md:p-8 space-y-6 shadow-md border border-slate-850">
-              <h2 className="font-display font-bold text-lg text-yellow-400">Preconstruction HQ Desk</h2>
-              
-              <div className="space-y-4">
-                <a 
-                  href="tel:+15077781624" 
-                  className="flex items-center gap-4 text-xs sm:text-sm text-slate-300 hover:text-yellow-400 transition-colors font-mono"
-                >
-                  <Phone className="w-5 h-5 text-yellow-500 shrink-0" />
-                  <span>+1 (507) 778 1624</span>
-                </a>
-                <a 
-                  href="mailto:info@ozsolution.com" 
-                  className="flex items-center gap-4 text-xs sm:text-sm text-slate-300 hover:text-yellow-400 transition-colors font-mono"
-                >
-                  <Mail className="w-5 h-5 text-yellow-500 shrink-0" />
-                  <span>info@ozsolution.com</span>
-                </a>
-                <div className="flex items-start gap-4 text-xs sm:text-sm text-slate-300">
-                  <MapPin className="w-5 h-5 text-yellow-500 shrink-0 mt-0.5" />
-                  <span>15750 Fair Hill Way Apple Valley, MN 55124</span>
-                </div>
-              </div>
+        <div className="relative mx-auto flex min-h-[390px] w-full max-w-7xl items-center px-5 py-20 sm:min-h-[460px] sm:px-8 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, delay: 0.2 }}
+            className="max-w-3xl"
+          >
+            <div className="mb-5 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.24em] text-yellow-400">
+              <span className="h-px w-10 bg-yellow-400" />
+              Contact OZ Solution
             </div>
-
-            {/* Branch Selector Map Mockup from Pic 1 / Pic 3 details */}
-            <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6">
-              <div>
-                <span className="text-[10px] text-slate-400 font-mono uppercase tracking-widest font-bold">REGIONAL COVERAGE</span>
-                <h3 className="font-display font-bold text-slate-950 text-base mt-1">OZ Solution Branch Locations</h3>
-              </div>
-              
-              <div className="grid grid-cols-3 gap-2 text-center text-xs font-bold leading-tight">
-                {[
-                  { key: 'minnesota', label: 'Minnesota (HQ)' },
-                  { key: 'illinois', label: 'Chicago (IL)' },
-                  { key: 'texas', label: 'Houston (TX)' }
-                ].map((item) => (
-                  <button
-                    key={item.key}
-                    onClick={() => setActiveBranch(item.key as any)}
-                    className={`py-2 px-1 rounded-lg border transition-all text-xs truncate cursor-pointer ${
-                      activeBranch === item.key 
-                        ? 'border-yellow-500 bg-yellow-500/10 text-yellow-600 font-bold' 
-                        : 'border-slate-200 bg-slate-50 text-slate-500 hover:bg-slate-100'
-                    }`}
-                  >
-                    {item.label}
-                  </button>
-                ))}
-              </div>
-
-              {/* Simulated Map visual showing latitude/longitude structure */}
-              <div className="bg-slate-900 rounded-xl h-44 relative overflow-hidden flex items-center justify-center text-center p-4">
-                {/* Blueprint lines on background */}
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:1rem_1rem] opacity-50" />
-                <div className="absolute top-2 right-2 font-mono text-[9px] text-cyan-500">{branchDetails[activeBranch].coordinates}</div>
-                
-                <div className="relative z-10 space-y-2">
-                  <span className="inline-flex h-3 w-3 rounded-full bg-yellow-400 animate-ping absolute -top-1 -right-1" />
-                  <MapPin className="w-8 h-8 text-yellow-500 mx-auto" />
-                  <p className="text-[10px] font-mono text-slate-300 max-w-xs uppercase tracking-wider">{branchDetails[activeBranch].address}</p>
-                </div>
-              </div>
-
-              {/* Selected Branch Specifications */}
-              <div className="space-y-2 text-xs font-sans">
-                <div className="flex justify-between border-b border-slate-100 pb-2">
-                  <span className="text-slate-400">Direct Telephone:</span>
-                  <span className="font-mono text-slate-800 font-bold">{branchDetails[activeBranch].phone}</span>
-                </div>
-                <div className="flex justify-between border-b border-slate-100 pb-2">
-                  <span className="text-slate-400">Contact Email:</span>
-                  <span className="font-mono text-slate-800 font-bold">{branchDetails[activeBranch].email}</span>
-                </div>
-                <div className="flex justify-between pb-1">
-                  <span className="text-slate-400">Operating Hours:</span>
-                  <span className="text-slate-800 font-semibold">{branchDetails[activeBranch].hours}</span>
-                </div>
-              </div>
+            <h1 className="font-display text-5xl font-extrabold leading-[0.94] tracking-tight text-white sm:text-6xl lg:text-7xl">
+              Let&apos;s build your next <span className="text-yellow-400">winning bid.</span>
+            </h1>
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-200 sm:text-base">
+              Tell us about your project and our senior estimating team will help you move from drawings to confident decisions.
+            </p>
+            <div className="mt-7 flex items-center gap-2 text-xs font-semibold text-slate-200">
+              <span>Home</span><span className="text-yellow-400">/</span><span>Contact us</span>
             </div>
+          </motion.div>
+        </div>
+      </section>
 
-          </ScrollReveal>
-
-          {/* Contact Feedback Form (7 cols) */}
-          <ScrollReveal variant="fadeLeft" delay={0.2} className="lg:col-span-7 bg-white border border-slate-220 border-slate-200 p-8 rounded-2xl shadow-sm">
-            <h2 className="font-display font-extrabold text-[#2e3f4f] text-xl mb-4 flex items-center gap-2">
-              <MessageSquareCode className="w-5 h-5 text-yellow-500" />
-              <span>Submit General Inquiries</span>
+      <section className="mx-auto w-full max-w-7xl px-5 py-16 sm:px-8 sm:py-24 lg:px-12">
+        <div className="grid items-start gap-12 lg:grid-cols-[0.88fr_1.12fr] lg:gap-20">
+          <motion.aside
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-yellow-600"><span className="h-1.5 w-1.5 bg-yellow-500" /> Contact us</p>
+            <h2 className="mt-5 font-display text-4xl font-bold leading-tight tracking-tight text-slate-950 sm:text-5xl">
+              Precision starts with a conversation.
             </h2>
-            <p className="text-xs text-slate-500 font-sans leading-relaxed mb-6">
-              Have general concerns, media inquiries, or custom pricing questions? Fill in our feedback portal underneath.
+            <p className="mt-5 max-w-lg text-sm leading-7 text-slate-500">
+              From takeoffs and bid estimates to BIM cost modeling, share your scope and we&apos;ll help shape a clear, commercially sound path forward.
             </p>
 
-            <form onSubmit={handleForm} className="space-y-5">
-              <div>
-                <label className="block text-xs font-semibold text-slate-700 font-sans mb-1.5">Your Full Name *</label>
-                <input
-                  type="text"
-                  required
-                  value={feedback.name}
-                  onChange={(e) => setFeedback({ ...feedback, name: e.target.value })}
-                  placeholder="e.g. Robert Vance"
-                  className="w-full bg-slate-50 border border-slate-300 rounded-md py-3 px-4 text-sm focus:outline-none focus:border-yellow-500 focus:bg-white transition-colors"
-                />
-              </div>
+            <div className="mt-10 divide-y divide-slate-200 border-y border-slate-200">
+              {contactDetails.map(({ icon: Icon, label, value, href }, index) => {
+                const content = <>
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-yellow-500 text-white transition-transform duration-300 group-hover:scale-105"><Icon className="h-5 w-5" /></span>
+                  <span><span className="block text-xs font-semibold uppercase tracking-wide text-slate-900">{label}</span><span className="mt-1 block text-xs leading-5 text-slate-500 sm:text-sm">{value}</span></span>
+                </>;
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 font-sans mb-1.5">Telephone Connection *</label>
-                  <input
-                    type="tel"
-                    required
-                    value={feedback.phone}
-                    onChange={(e) => setFeedback({ ...feedback, phone: e.target.value })}
-                    placeholder="e.g. +1 (312) 558-9021"
-                    className="w-full bg-slate-50 border border-slate-300 rounded-md py-3 px-4 text-sm focus:outline-none focus:border-yellow-500 focus:bg-white transition-colors"
-                  />
+                return href ? (
+                  <motion.a whileHover={{ x: 5 }} key={label} href={href} className="group flex items-center gap-4 py-5">{content}</motion.a>
+                ) : (
+                  <motion.div whileHover={{ x: 5 }} key={label} className="group flex items-center gap-4 py-5">{content}</motion.div>
+                );
+              })}
+            </div>
+
+            <div className="mt-8 flex items-center gap-3 rounded-2xl bg-slate-950 p-5 text-slate-200">
+              <Clock3 className="h-5 w-5 shrink-0 text-yellow-400" />
+              <p className="text-xs leading-5"><span className="font-bold text-white">Business hours:</span> Monday–Friday, 9:00 AM–5:00 PM (CST)</p>
+            </div>
+          </motion.aside>
+
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.65, delay: 0.1 }}
+            className="relative rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-[0_20px_60px_-35px_rgba(15,23,42,0.35)] sm:p-9 lg:p-11"
+          >
+            <div className="absolute right-0 top-0 h-28 w-28 rounded-bl-[5rem] rounded-tr-3xl bg-yellow-500/15" />
+            <div className="relative">
+              <div className="flex items-center gap-3"><span className="grid h-11 w-11 place-items-center rounded-xl bg-yellow-500 text-white"><MessageSquareText className="h-5 w-5" /></span><span className="text-xs font-semibold uppercase tracking-[0.2em] text-yellow-600">Project inquiry</span></div>
+              <h2 className="mt-6 font-display text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">Get in touch with us</h2>
+              <p className="mt-3 max-w-xl text-sm leading-6 text-slate-500">Give us a few project details. We&apos;ll connect you with the right estimating specialist within one business day.</p>
+
+              <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <Field label="First name"><input required value={form.firstName} onChange={(e) => setForm({ ...form, firstName: e.target.value })} placeholder="First name" className="contact-input" /></Field>
+                  <Field label="Last name"><input required value={form.lastName} onChange={(e) => setForm({ ...form, lastName: e.target.value })} placeholder="Last name" className="contact-input" /></Field>
+                  <Field label="Phone number"><input required type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="+1 (000) 000-0000" className="contact-input" /></Field>
+                  <Field label="Email address"><input required type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="you@company.com" className="contact-input" /></Field>
                 </div>
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 font-sans mb-1.5">Corporate Email Address *</label>
-                  <input
-                    type="email"
-                    required
-                    value={feedback.email}
-                    onChange={(e) => setFeedback({ ...feedback, email: e.target.value })}
-                    placeholder="e.g. robert@vancedevelopment.com"
-                    className="w-full bg-slate-50 border border-slate-300 rounded-md py-3 px-4 text-sm focus:outline-none focus:border-yellow-500 focus:bg-white transition-colors"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-slate-700 font-sans mb-1.5">Primary Subject Matter *</label>
-                <select
-                  value={feedback.subject}
-                  onChange={(e) => setFeedback({ ...feedback, subject: e.target.value })}
-                  className="w-full bg-[#f8fafc] border border-slate-300 rounded-md py-3 px-4 text-sm focus:outline-none focus:border-yellow-500 focus:bg-white transition-colors font-sans"
-                >
-                  <option value="takeoff">Quantity Takeoff Request</option>
-                  <option value="bim">5D BIM Revit Coordination</option>
-                  <option value="pricing">General Pricing Packages</option>
-                  <option value="custom">Custom Partner Inquiries</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-slate-700 font-sans mb-1.5">Notes *</label>
-                <textarea
-                  rows={4}
-                  required
-                  value={feedback.note}
-                  onChange={(e) => setFeedback({ ...feedback, note: e.target.value })}
-                  placeholder="Detail specify your preconstruction inquiry points..."
-                  className="w-full bg-slate-50 border border-slate-300 rounded-md py-3 px-4 text-sm focus:outline-none focus:border-yellow-500 focus:bg-white transition-colors resize-none"
-                />
-              </div>
-
-              <div className="flex items-start gap-2 pt-2">
-                <CheckSquare className="w-5 h-5 text-yellow-500 mt-0.5 shrink-0" />
-                <p className="text-[10px] text-slate-500 leading-relaxed font-sans mt-0.5">
-                  I agree that OZ Solution representatives can contact me regarding my request via regional telephone services or email.
-                </p>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full flex items-center justify-center gap-2 bg-[#2e3f4f] hover:bg-[#24323f] text-yellow-400 font-bold py-4 rounded-md transition-all active:scale-98 shadow-md cursor-pointer"
-              >
-                <Send className="w-4 h-4" />
-                <span>Submit Feedback Inquiry</span>
-              </button>
-
-              {sent && (
-                <div className="p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs rounded-lg animate-fadeIn text-center font-sans">
-                  ✓ Feedback submitted successfully! We will coordinate a callback within 4 hours.
-                </div>
-              )}
-            </form>
-          </ScrollReveal>
-
+                <Field label="What can we help with?"><select value={form.service} onChange={(e) => setForm({ ...form, service: e.target.value })} className="contact-input"><option value="quantity-takeoff">Quantity takeoff</option><option value="detailed-estimate">Detailed cost estimate</option><option value="bim-modeling">BIM 3D / 5D modeling</option><option value="tender-bid">Tender & bid estimate</option><option value="other">Other inquiry</option></select></Field>
+                <Field label="Tell us about your project"><textarea required rows={5} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Project type, location, schedule, and any details that will help us prepare..." className="contact-input resize-none" /></Field>
+                <label className="flex items-start gap-3 pt-1 text-xs leading-5 text-slate-500"><input required type="checkbox" className="mt-0.5 h-4 w-4 accent-yellow-500" /><span>I agree to be contacted by OZ Solution about this request. We respect your privacy and never sell your information.</span></label>
+                <motion.button whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }} type="submit" className="group mt-2 inline-flex items-center gap-3 rounded-lg bg-yellow-500 px-6 py-4 text-sm font-semibold text-slate-950 shadow-lg shadow-yellow-500/20 transition-colors hover:bg-yellow-400">
+                  Send message <span className="grid h-6 w-6 place-items-center rounded bg-slate-950 text-white transition-transform group-hover:translate-x-1"><ArrowRight className="h-4 w-4" /></span>
+                </motion.button>
+                <AnimatePresence>{sent && <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }} className="flex items-center gap-3 rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-800"><CheckCircle2 className="h-5 w-5 shrink-0" />Thanks—your message is on its way. We&apos;ll be in touch shortly.</motion.div>}</AnimatePresence>
+              </form>
+            </div>
+          </motion.div>
         </div>
+      </section>
 
-      </div>
-    </div>
+      <style jsx global>{`
+        .contact-input { width: 100%; border: 1px solid #e2e8f0; border-radius: 0.7rem; background: #fff; padding: 0.875rem 1rem; color: #0f172a; font-size: 0.875rem; outline: none; transition: border-color 180ms ease, box-shadow 180ms ease; }
+        .contact-input::placeholder { color: #94a3b8; }
+        .contact-input:focus { border-color: #eab308; box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.16); }
+      `}</style>
+    </main>
   );
+}
+
+function Field({ label, children }: { label: string; children: React.ReactNode }) {
+  return <label className="block text-xs font-semibold text-slate-700"><span className="mb-2 block">{label}</span>{children}</label>;
 }

@@ -317,7 +317,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               {/* Overlapping Smiling construction worker */}
               <div className="relative mt-8 h-64 sm:h-72 rounded-xl overflow-hidden shadow-lg border border-slate-200 bg-white">
                 <img 
-                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=700&q=80" 
+                  src="/assets/aboutus.jpg" 
                   alt="Construction estimator with safety helmet and blueprints" 
                   className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
@@ -355,7 +355,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
                   <h3 className="font-display font-extrabold text-xl sm:text-2xl text-slate-950 tracking-tight">
                     Dedicated Professionals
                   </h3>
-                </div>
+                </div>  
 
                 <p className="text-xs sm:text-sm text-slate-900/80 leading-relaxed font-sans font-medium">
                   Experienced estimators, engineers, and BIM specialists working with absolute precision across all commercial, residential, and industrial divisions.
@@ -435,7 +435,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
             <ScrollReveal variant="fadeLeft" delay={0.2} className="lg:col-span-6">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
                 <img 
-                  src="https://images.unsplash.com/photo-1581094288338-2314dddb7eed?auto=format&fit=crop&w=800&q=80" 
+                  src="/assets/service-scope.jpg" 
                   alt="Male and female professional engineers with helmets and safety vests" 
                   className="w-full h-[380px] sm:h-[450px] object-cover"
                   referrerPolicy="no-referrer"

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Calculator, ChevronRight, CheckCircle2, ArrowRight, ShieldCheck, 
@@ -12,6 +12,62 @@ import ScrollReveal from '../common/ScrollReveal';
 interface HomeProps {
   onNavigate: (route: PageRoute) => void;
   onOpenEstimationTool: () => void;
+}
+
+interface AnimatedStatProps {
+  value: number;
+  label: string;
+  prefix?: string;
+  suffix?: string;
+  isLast?: boolean;
+}
+
+function AnimatedStat({ value, label, prefix = '', suffix = '', isLast = false }: AnimatedStatProps) {
+  const [count, setCount] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
+  const statRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const element = statRef.current;
+    if (!element || hasStarted) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setHasStarted(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.35 });
+
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [hasStarted]);
+
+  useEffect(() => {
+    if (!hasStarted) return;
+
+    const duration = 1500;
+    const startTime = performance.now();
+    let frameId = 0;
+
+    const animate = (time: number) => {
+      const progress = Math.min((time - startTime) / duration, 1);
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.round(value * easedProgress));
+      if (progress < 1) frameId = requestAnimationFrame(animate);
+    };
+
+    frameId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(frameId);
+  }, [hasStarted, value]);
+
+  return (
+    <div ref={statRef} className={`flex min-h-32 flex-col items-center justify-center px-5 py-4 text-center lg:border-l-2 lg:border-slate-200/80 ${isLast ? 'lg:border-r-2' : ''}`}>
+      <span className="mb-2 block font-display text-4xl font-black leading-none text-yellow-500 sm:text-5xl lg:text-5xl">
+        {prefix}{count.toLocaleString('en-US')}{suffix}
+      </span>
+      <span className="text-xs font-bold tracking-tight text-slate-800 sm:text-sm">{label}</span>
+    </div>
+  );
 }
 
 export default function Home({ onNavigate, onOpenEstimationTool }: HomeProps) {
@@ -235,7 +291,7 @@ export default function Home({ onNavigate, onOpenEstimationTool }: HomeProps) {
               {/* Get Free Quote CTA Button */}
               <div className="pt-2">
                 <button 
-                  onClick={onOpenEstimationTool}
+                  onClick={() => onNavigate('contact-us')}
                   className="flex items-center justify-center gap-2 bg-yellow-500 hover:bg-yellow-400 active:scale-95 text-slate-950 font-bold px-8 py-4 rounded-lg shadow-lg hover:shadow-yellow-500/10 transition-all cursor-pointer text-base"
                 >
                   <span>Get Free Quote</span>
@@ -1199,32 +1255,12 @@ export default function Home({ onNavigate, onOpenEstimationTool }: HomeProps) {
 
             {/* Stats row with vertical separators */}
             <ScrollReveal variant="fadeUp" duration={0.8} delay={0.15}>
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-y-8 gap-x-0 w-full mt-12 px-2">
-                {/* Stat 1 */}
-                <div className="text-center border-l-2 border-slate-200/80 px-4 py-2 flex flex-col justify-center min-h-[90px]">
-                  <span className="text-2xl sm:text-3.5xl font-display font-black text-yellow-500 block mb-1">12 %</span>
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800 tracking-tight">Cut Material Cost</span>
-                </div>
-                {/* Stat 2 */}
-                <div className="text-center border-l-2 border-slate-200/80 px-4 py-2 flex flex-col justify-center min-h-[90px]">
-                  <span className="text-2xl sm:text-3.5xl font-display font-black text-yellow-500 block mb-1">$ 500 M</span>
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800 tracking-tight">Projects Estimated</span>
-                </div>
-                {/* Stat 3 */}
-                <div className="text-center border-l-2 border-slate-200/80 px-4 py-2 flex flex-col justify-center min-h-[90px]">
-                  <span className="text-2xl sm:text-3.5xl font-display font-black text-yellow-500 block mb-1">+ 18 %</span>
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800 tracking-tight">Average Bid ROI</span>
-                </div>
-                {/* Stat 4 */}
-                <div className="text-center border-l-2 border-slate-200/80 px-4 py-2 flex flex-col justify-center min-h-[90px]">
-                  <span className="text-2xl sm:text-3.5xl font-display font-black text-yellow-500 block mb-1">5,000 +</span>
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800 tracking-tight">Bids Submitted</span>
-                </div>
-                {/* Stat 5 */}
-                <div className="text-center border-l-2 border-slate-200/80 border-r-2 border-slate-200/80 px-4 py-2 flex flex-col justify-center min-h-[90px]">
-                  <span className="text-2xl sm:text-3.5xl font-display font-black text-yellow-500 block mb-1">100 %</span>
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800 tracking-tight">Satisfaction</span>
-                </div>
+              <div className="mt-12 grid w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
+                <AnimatedStat value={12} suffix="%" label="Cut Material Cost" />
+                <AnimatedStat value={500} prefix="$" suffix="M" label="Projects Estimated" />
+                <AnimatedStat value={18} prefix="+" suffix="%" label="Average Bid ROI" />
+                <AnimatedStat value={5000} suffix="+" label="Bids Submitted" />
+                <AnimatedStat value={100} suffix="%" label="Satisfaction" isLast />
               </div>
             </ScrollReveal>
           </div>
