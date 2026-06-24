@@ -66,7 +66,7 @@ export default function PrivacyPolicy() {
         <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
           <ScrollReveal variant="fadeUp" duration={0.8}>
             <p className="text-sm sm:text-base md:text-lg text-slate-300 font-sans leading-relaxed">
-              Antenity respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+              OZ Solution respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
             </p>
             <p className="text-sm sm:text-base md:text-lg text-slate-300 font-sans leading-relaxed font-semibold mt-4 text-yellow-500">
               By using our website or services, you agree to the terms of this Privacy Policy.
@@ -149,9 +149,9 @@ export default function PrivacyPolicy() {
                   <span className="font-mono text-slate-400 font-bold text-sm tracking-wider">03.</span>
                 </div>
                 <div className="text-xs text-slate-500 leading-relaxed space-y-3 font-sans mt-3">
-                  <p>If you opt in to receive SMS communications from Antenity, the following applies:</p>
+                  <p>If you opt in to receive SMS communications from OZ Solution, the following applies:</p>
                   <h4 className="font-bold text-[#1a2631]">SMS Consent</h4>
-                  <p>By providing your mobile number and opting in, you consent to receive SMS messages from Antenity related to:</p>
+                  <p>By providing your mobile number and opting in, you consent to receive SMS messages from OZ Solution related to:</p>
                   <ul className="list-disc list-inside space-y-1 pl-1">
                     <li>Service updates</li>
                     <li>Account notifications</li>
@@ -161,7 +161,7 @@ export default function PrivacyPolicy() {
                     Message frequency may vary. Standard message and data rates may apply.
                   </p>
                   <p className="mt-2 font-medium text-slate-700">
-                    You may opt out at any time by replying <strong className="text-slate-900">STOP</strong>. For assistance, reply <strong className="text-slate-900">HELP</strong> or contact us at info@antenity.com
+                    You may opt out at any time by replying <strong className="text-slate-900">STOP</strong>. For assistance, reply <strong className="text-slate-900">HELP</strong> or contact us at info@ozsolution.com
                   </p>
                 </div>
               </div>
@@ -192,7 +192,7 @@ export default function PrivacyPolicy() {
                     <li>Providing technical support</li>
                     <li>Operating essential business services</li>
                   </ul>
-                  <p>These service providers are contractually obligated to protect your data, use it solely for the services they provide to Antenity, and not use it for their own marketing.</p>
+                  <p>These service providers are contractually obligated to protect your data, use it solely for the services they provide to OZ Solution, and not use it for their own marketing.</p>
                 </div>
               </div>
             </ScrollReveal>

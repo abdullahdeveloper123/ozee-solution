@@ -120,7 +120,7 @@ export default function Blog() {
             </div>
 
             <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
-              <span className="text-slate-400 text-xs font-sans">© 2026 Antenity Inc. All rights reserved.</span>
+              <span className="text-slate-400 text-xs font-sans">© 2026 OZ Solution. All rights reserved.</span>
               <button 
                 onClick={() => alert('Link copied to clipboard!')}
                 className="text-xs font-mono text-slate-500 hover:text-yellow-600 flex items-center gap-1 cursor-pointer"

@@ -66,7 +66,7 @@ export default function MepHvacEstimation({ onNavigate, onOpenEstimationTool }: 
       a: "Yes. We support both brand-new complex commercial developments requiring complete layout take-offs, and specialized retrofit/renovation HVAC projects demanding careful spatial planning."
     },
     {
-      q: "Q8. Why choose Antenity for HVAC cost estimation?",
+      q: "Q8. Why choose OZ Solution for HVAC cost estimation?",
       a: "We deliver data-backed accuracy, full pricing transparency, rapid turnarounds, and expert localized construction intelligence, giving you absolute confidence at the bargaining table."
     }
   ];
@@ -112,7 +112,7 @@ export default function MepHvacEstimation({ onNavigate, onOpenEstimationTool }: 
 
             <ScrollReveal variant="fadeRight" delay={0.2} className="space-y-4">
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-sans">
-                For any building or renovation project to be successful, it is crucial to have an accurate estimate of HVAC costs. Antenity offers precise, accurate HVAC cost-estimation services that give contractors, developers, engineers, and consultants the information they need to plan with confidence. Our estimates are meant to help you make better budget decisions, reduce financial risk, and ensure HVAC systems are delivered on time and within the agreed-upon scope.
+                For any building or renovation project to be successful, it is crucial to have an accurate estimate of HVAC costs. OZ Solution offers precise, accurate HVAC cost-estimation services that give contractors, developers, engineers, and consultants the information they need to plan with confidence. Our estimates are meant to help you make better budget decisions, reduce financial risk, and ensure HVAC systems are delivered on time and within the agreed-upon scope.
               </p>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-sans">
                 Our <strong className="text-slate-900 font-semibold">HVAC budgeting and cost control</strong> services provide project teams with clear, accurate, and complete cost information from the early design and HVAC Load Calculations stages through final contract submissions. This helps them make smart decisions at every level.
@@ -206,7 +206,7 @@ export default function MepHvacEstimation({ onNavigate, onOpenEstimationTool }: 
 
               <ScrollReveal variant="fadeRight" delay={0.2} className="space-y-4">
                 <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                  Antenity provides comprehensive HVAC & Specialized Services covering all key costs. Here are the costs we think will be involved in HVAC:
+                  OZ Solution provides comprehensive HVAC & Specialized Services covering all key costs. Here are the costs we think will be involved in HVAC:
                 </p>
 
                 {/* List items with nice custom layouts */}
@@ -320,7 +320,7 @@ export default function MepHvacEstimation({ onNavigate, onOpenEstimationTool }: 
             {/* Box 1 with left yellow highlight */}
             <ScrollReveal variant="fadeRight" className="bg-white p-8 rounded-xl shadow-sm border border-slate-200 border-l-4 border-l-yellow-500 space-y-4">
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-sans">
-                Antenity's <strong className="text-slate-950 font-bold">HVAC bid estimation</strong> services are essential for preparing bids and competing for contracts. Our detailed cost breakdowns help contractors and consultants prepare proposals that accurately reflect the project's needs.
+                OZ Solution's <strong className="text-slate-950 font-bold">HVAC bid estimation</strong> services are essential for preparing bids and competing for contracts. Our detailed cost breakdowns help contractors and consultants prepare proposals that accurately reflect the project's needs.
               </p>
             </ScrollReveal>
 
@@ -370,7 +370,7 @@ export default function MepHvacEstimation({ onNavigate, onOpenEstimationTool }: 
 
           <ScrollReveal variant="fadeUp" delay={0.1} className="space-y-6 max-w-4xl mx-auto text-slate-300">
             <p className="text-sm sm:text-base leading-relaxed">
-              Antenity helps clients achieve long-term efficiency by offering value engineering and lifecycle cost analysis in addition to upfront construction expenditures. When we estimate the cost of HVAC, we consider the effectiveness of MEP coordination drawings, its performance, maintenance costs, and lifespan.
+              OZ Solution helps clients achieve long-term efficiency by offering value engineering and lifecycle cost analysis in addition to upfront construction expenditures. When we estimate the cost of HVAC, we consider the effectiveness of MEP coordination drawings, its performance, maintenance costs, and lifespan.
             </p>
             <p className="text-sm sm:text-base leading-relaxed font-sans">
               We help improve HVAC system performance while keeping costs in check by evaluating <strong className="text-yellow-400 font-bold">HVAC materials and labor cost estimates</strong>. This method ensures that systems not only stay within budget but also deliver long-term value by becoming energy-efficient and reducing operating costs.
@@ -410,7 +410,7 @@ export default function MepHvacEstimation({ onNavigate, onOpenEstimationTool }: 
       </div>
     </section>
 
-      {/* 8. Why Choose Antenity - Dark Parallax background with technical overlay */}
+      {/* 8. Why Choose OZ Solution - Dark Parallax background with technical overlay */}
       <section className="relative py-24 flex items-center justify-center overflow-hidden">
         {/* Manifold valves background */}
         <div className="absolute inset-0 z-0">
@@ -429,7 +429,7 @@ export default function MepHvacEstimation({ onNavigate, onOpenEstimationTool }: 
               Distinct Advantages
             </span>
             <h2 className="text-3xl sm:text-4xl font-display font-black text-white tracking-tight leading-tight">
-              Why Choose Antenity for HVAC Cost Estimation?
+              Why Choose OZ Solution for HVAC Cost Estimation?
             </h2>
             <div className="w-20 h-1 bg-yellow-400 mx-auto mt-4 rounded-full" />
           </ScrollReveal>
@@ -460,7 +460,7 @@ export default function MepHvacEstimation({ onNavigate, onOpenEstimationTool }: 
 
             <div className="pt-4 border-t border-white/10 mt-6">
               <p className="text-xs sm:text-sm text-yellow-400 font-mono font-bold tracking-wider uppercase leading-relaxed">
-                Our HVAC cost prediction services at Antenity help you plan better, make decisions faster, and finish your project on time.
+                Our HVAC cost prediction services at OZ Solution help you plan better, make decisions faster, and finish your project on time.
               </p>
             </div>
           </ScrollReveal>
@@ -552,14 +552,14 @@ export default function MepHvacEstimation({ onNavigate, onOpenEstimationTool }: 
               Free Proposal Support
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-white tracking-tight leading-tight">
-              Antenity Can Help You Figure Out How Much Your HVAC Will Cost
+              OZ Solution Can Help You Figure Out How Much Your HVAC Will Cost
             </h2>
             <div className="w-16 h-1 bg-yellow-400 mx-auto mt-4 rounded-full" />
           </ScrollReveal>
 
           <ScrollReveal variant="fadeUp" delay={0.1} className="max-w-4xl mx-auto">
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-sans">
-              Antenity offers reliable <strong className="text-white font-bold">HVAC cost-estimation</strong> services tailored to your project needs, whether you are planning a new building project or improving an existing HVAC design. Our <strong className="text-yellow-400 font-semibold">HVAC cost consultants' USA</strong> knowledge helps you keep costs down, work more efficiently, and install HVAC systems with confidence.
+              OZ Solution offers reliable <strong className="text-white font-bold">HVAC cost-estimation</strong> services tailored to your project needs, whether you are planning a new building project or improving an existing HVAC design. Our <strong className="text-yellow-400 font-semibold">HVAC cost consultants' USA</strong> knowledge helps you keep costs down, work more efficiently, and install HVAC systems with confidence.
             </p>
           </ScrollReveal>
 

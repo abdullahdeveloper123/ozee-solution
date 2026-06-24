@@ -69,8 +69,8 @@ export default function Bim3dCostModeling({ onNavigate, onOpenEstimationTool }: 
       a: "Yes. It lets you identify spatial clashes (e.g., ductwork colliding with structural beams) prior to construction, avoiding extremely expensive field re-routes and emergency change orders."
     },
     {
-      q: "Q8. Why choose Antenity for BIM cost modeling services?",
-      a: "Antenity pairs state-of-the-art building information modeling software with top-tier construction estimators. We deliver beautiful, synchronized cost models that empower you to visualize every single dollar spent."
+      q: "Q8. Why choose OZ Solution for BIM cost modeling services?",
+      a: "OZ Solution pairs state-of-the-art building information modeling software with top-tier construction estimators. We deliver beautiful, synchronized cost models that empower you to visualize every single dollar spent."
     }
   ];
 
@@ -115,7 +115,7 @@ export default function Bim3dCostModeling({ onNavigate, onOpenEstimationTool }: 
 
             <ScrollReveal variant="fadeRight" delay={0.2} className="space-y-4">
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-sans">
-                Modern construction requires seamless collaboration between design geometries and budgetary reality. Antenity’s specialized BIM 3D Cost Modeling services unify physical virtual layouts directly with comprehensive cost databases. By leveraging intelligent 3D Building Information Models, we create dynamic, responsive cost mappings that eliminate manual counting errors and streamline procurement.
+                Modern construction requires seamless collaboration between design geometries and budgetary reality. OZ Solution’s specialized BIM 3D Cost Modeling services unify physical virtual layouts directly with comprehensive cost databases. By leveraging intelligent 3D Building Information Models, we create dynamic, responsive cost mappings that eliminate manual counting errors and streamline procurement.
               </p>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-sans">
                 Our <strong className="text-slate-900 font-semibold">BIM cost modeling</strong> platform bridges the gap between planners, developers, and field general contractors. We map structural, architectural, and MEP elements directly to real-time unit pricing databases, producing unparalleled accuracy.
@@ -210,7 +210,7 @@ export default function Bim3dCostModeling({ onNavigate, onOpenEstimationTool }: 
 
               <ScrollReveal variant="fadeRight" delay={0.2} className="space-y-4">
                 <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                  Antenity delivers granular BIM Cost services mapped to every coordinate of your digital model. Here is our direct operational process:
+                  OZ Solution delivers granular BIM Cost services mapped to every coordinate of your digital model. Here is our direct operational process:
                 </p>
 
                 {/* List items with nice custom layouts */}
@@ -324,7 +324,7 @@ export default function Bim3dCostModeling({ onNavigate, onOpenEstimationTool }: 
             {/* Box 1 with left yellow highlight */}
             <ScrollReveal variant="fadeRight" className="bg-white p-8 rounded-xl shadow-sm border border-slate-200 border-l-4 border-l-yellow-500 space-y-4">
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-sans">
-                Antenity’s <strong className="text-slate-950 font-bold">BIM 3D bid estimation</strong> deliverables provide contractors with a powerful competitive advantage. Showing clients a visual, audit-friendly cost map makes your tenders stand out and guarantees unparalleled reliability.
+                OZ Solution’s <strong className="text-slate-950 font-bold">BIM 3D bid estimation</strong> deliverables provide contractors with a powerful competitive advantage. Showing clients a visual, audit-friendly cost map makes your tenders stand out and guarantees unparalleled reliability.
               </p>
             </ScrollReveal>
 
@@ -374,7 +374,7 @@ export default function Bim3dCostModeling({ onNavigate, onOpenEstimationTool }: 
 
           <ScrollReveal variant="fadeUp" delay={0.1} className="space-y-6 max-w-4xl mx-auto text-slate-300">
             <p className="text-sm sm:text-base leading-relaxed">
-              By connecting accurate pricing with virtual coordinate elements, Antenity provides seamless value engineering insights. We track the cost of physical components, labor hours, and sub-assembly installations relative to structural layers.
+              By connecting accurate pricing with virtual coordinate elements, OZ Solution provides seamless value engineering insights. We track the cost of physical components, labor hours, and sub-assembly installations relative to structural layers.
             </p>
             <p className="text-sm sm:text-base leading-relaxed font-sans">
               Our models verify that you keep overall expenditures down while upgrading mechanical, electrical, and structural systems. This provides developer confidence and guarantees code-compliant design efficiency from day one.
@@ -414,7 +414,7 @@ export default function Bim3dCostModeling({ onNavigate, onOpenEstimationTool }: 
       </div>
     </section>
 
-      {/* 8. Why Choose Antenity - Dark Parallax background with technical overlay */}
+      {/* 8. Why Choose OZ Solution - Dark Parallax background with technical overlay */}
       <section className="relative py-24 flex items-center justify-center overflow-hidden">
         {/* Industrial background image */}
         <div className="absolute inset-0 z-0">
@@ -433,7 +433,7 @@ export default function Bim3dCostModeling({ onNavigate, onOpenEstimationTool }: 
               Distinct Advantages
             </span>
             <h2 className="text-3xl sm:text-4xl font-display font-black text-white tracking-tight leading-tight">
-              Why Choose Antenity for BIM 3D Cost Modeling?
+              Why Choose OZ Solution for BIM 3D Cost Modeling?
             </h2>
             <div className="w-20 h-1 bg-yellow-400 mx-auto mt-4 rounded-full" />
           </ScrollReveal>
@@ -464,7 +464,7 @@ export default function Bim3dCostModeling({ onNavigate, onOpenEstimationTool }: 
 
             <div className="pt-4 border-t border-white/10 mt-6">
               <p className="text-xs sm:text-sm text-yellow-400 font-mono font-bold tracking-wider uppercase leading-relaxed">
-                Antenity integrates modern CAD metrics directly with economic realities, allowing you to build both visually and financially on solid ground.
+                OZ Solution integrates modern CAD metrics directly with economic realities, allowing you to build both visually and financially on solid ground.
               </p>
             </div>
           </ScrollReveal>
@@ -556,14 +556,14 @@ export default function Bim3dCostModeling({ onNavigate, onOpenEstimationTool }: 
               Free Consultation Support
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-white tracking-tight leading-tight">
-              Antenity Can Help You Build Accurate BIM 3D Cost Models
+              OZ Solution Can Help You Build Accurate BIM 3D Cost Models
             </h2>
             <div className="w-16 h-1 bg-yellow-400 mx-auto mt-4 rounded-full" />
           </ScrollReveal>
 
           <ScrollReveal variant="fadeUp" delay={0.1} className="max-w-4xl mx-auto">
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-sans">
-              Antenity offers reliable, certified <strong className="text-white font-bold">BIM 3D modeling cost services</strong> customized precisely to your specifications. Our <strong className="text-yellow-400 font-semibold">BIM cost modeling specialists' USA</strong> intelligence helps you manage change orders, prevent on-site layout clashes, and bid with absolute safety.
+              OZ Solution offers reliable, certified <strong className="text-white font-bold">BIM 3D modeling cost services</strong> customized precisely to your specifications. Our <strong className="text-yellow-400 font-semibold">BIM cost modeling specialists' USA</strong> intelligence helps you manage change orders, prevent on-site layout clashes, and bid with absolute safety.
             </p>
           </ScrollReveal>
 
