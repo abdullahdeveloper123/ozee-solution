@@ -4,8 +4,7 @@ import {
   Calculator, ChevronRight, CheckCircle2, ArrowRight, ShieldCheck, 
   Users, Building2, HardHat, FileText, Settings, Sparkles, 
   ChevronDown, Phone, Mail, MapPin, Send, HelpCircle, Star, Quote,
-  Layers, Hammer, Compass, DollarSign, Activity, Clock, Shield, Award,
-  ChevronLeft
+  Layers, Hammer, Compass, DollarSign, Activity, Clock, Shield, Award
 } from 'lucide-react';
 import { PageRoute } from '@/types';
 import ScrollReveal from '../common/ScrollReveal';
@@ -18,15 +17,6 @@ interface HomeProps {
 export default function Home({ onNavigate, onOpenEstimationTool }: HomeProps) {
   // Ref for horizontal reviews scroll container
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
-
-  const scrollCarousel = (direction: 'left' | 'right') => {
-    if (scrollContainerRef.current) {
-      const { scrollLeft } = scrollContainerRef.current;
-      const scrollAmount = 340; // Card width + gap
-      const targetScroll = direction === 'left' ? scrollLeft - scrollAmount : scrollLeft + scrollAmount;
-      scrollContainerRef.current.scrollTo({ left: targetScroll, behavior: 'smooth' });
-    }
-  };
 
   // Auto scroll horizontal reviews carousel
   React.useEffect(() => {
@@ -589,7 +579,7 @@ export default function Home({ onNavigate, onOpenEstimationTool }: HomeProps) {
 
                   <div className="pt-6 border-t border-slate-100 mt-6 flex justify-between items-center">
                     <button 
-                      onClick={onOpenEstimationTool}
+                      onClick={() => onNavigate('contact-us')}
                       className="text-xs font-mono font-bold text-yellow-600 hover:text-yellow-700 flex items-center gap-1 cursor-pointer"
                     >
                       <span>Quote Estimator</span>
@@ -623,7 +613,7 @@ export default function Home({ onNavigate, onOpenEstimationTool }: HomeProps) {
               </p>
             </div>
             <button 
-              onClick={onOpenEstimationTool}
+              onClick={() => onNavigate('contact-us')}
               className="bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-bold text-xs uppercase tracking-wider py-3.5 px-6 rounded-md shadow-md transition-colors whitespace-nowrap cursor-pointer"
             >
               Get a Free Quote
@@ -694,7 +684,7 @@ export default function Home({ onNavigate, onOpenEstimationTool }: HomeProps) {
             <span className="text-slate-400 text-xs font-sans">
               Let's make something great work together.{' '}
               <button 
-                onClick={onOpenEstimationTool}
+                onClick={() => onNavigate('contact-us')}
                 className="text-yellow-400 hover:text-yellow-300 font-bold underline transition-colors cursor-pointer"
               >
                 Get Free Quote
@@ -1112,7 +1102,7 @@ export default function Home({ onNavigate, onOpenEstimationTool }: HomeProps) {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <button 
-              onClick={onOpenEstimationTool}
+              onClick={() => onNavigate('contact-us')}
               className="bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-bold text-xs uppercase tracking-wider py-4 px-8 rounded-md shadow-lg transition-colors cursor-pointer"
             >
               Request a Proposal
@@ -1338,18 +1328,8 @@ export default function Home({ onNavigate, onOpenEstimationTool }: HomeProps) {
                 </div>
               </div>
 
-              {/* Right Column: Carousel Track with arrow triggers inside gutter padding */}
-              <div className="relative flex-1 min-w-0 flex items-center px-12 sm:px-14" id="testimonial-carousel-container">
-                
-                {/* Left floating control */}
-                <button 
-                  onClick={() => scrollCarousel('left')}
-                  className="absolute left-1 sm:left-2 z-20 bg-slate-900 hover:bg-slate-800 text-yellow-500 hover:text-yellow-400 p-3 rounded-full shadow-lg transition-all focus:outline-none hover:scale-110 active:scale-95 border border-yellow-500/20 flex items-center justify-center cursor-pointer"
-                  aria-label="Scroll left"
-                  id="testimonial-scroll-left"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
+              {/* Right Column: Automatically scrolling review track */}
+              <div className="relative flex-1 min-w-0 flex items-center" id="testimonial-carousel-container">
 
                 {/* Main Scrollable Track */}
                 <div 
@@ -1447,16 +1427,6 @@ export default function Home({ onNavigate, onOpenEstimationTool }: HomeProps) {
                     </div>
                   ))}
                 </div>
-
-                {/* Right floating control */}
-                <button 
-                  onClick={() => scrollCarousel('right')}
-                  className="absolute right-1 sm:right-2 z-20 bg-slate-900 hover:bg-slate-800 text-yellow-500 hover:text-yellow-400 p-3 rounded-full shadow-lg transition-all focus:outline-none hover:scale-110 active:scale-95 border border-yellow-500/20 flex items-center justify-center cursor-pointer"
-                  aria-label="Scroll right"
-                  id="testimonial-scroll-right"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
 
               </div>
 

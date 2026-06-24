@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Logo from './Logo';
 import { PageRoute } from '@/types';
 import { Mail, Phone, MapPin, Send, HelpCircle, ExternalLink, ShieldCheck } from 'lucide-react';
+import { FaDiscord, FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
 
 interface FooterProps {
   onNavigate: (route: PageRoute) => void;
@@ -26,6 +27,14 @@ export default function Footer({ onNavigate }: FooterProps) {
     { label: 'LinkedIn', icon: '🇱', href: 'https://linkedin.com/company/ozsolution' },
     { label: 'Instagram', icon: '🇮', href: 'https://instagram.com/ozsolution' },
     { label: 'Discord', icon: '🇩', href: 'https://discord.gg/ozsolution' }
+  ];
+
+  const modernSocials = [
+    { label: 'X / Twitter', icon: FaXTwitter },
+    { label: 'Facebook', icon: FaFacebookF },
+    { label: 'LinkedIn', icon: FaLinkedinIn },
+    { label: 'Instagram', icon: FaInstagram },
+    { label: 'Discord', icon: FaDiscord },
   ];
 
   const quickLinks = [
@@ -142,18 +151,19 @@ export default function Footer({ onNavigate }: FooterProps) {
             </span>
           </div>
           <div className="flex flex-wrap gap-3">
-            {socials.map((social) => (
-              <a
+            {modernSocials.map((social) => {
+              const SocialIcon = social.icon;
+              return (
+              <span
                 key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 bg-[#2d3744] hover:bg-slate-700 hover:text-yellow-400 border border-slate-700/30 text-slate-200 text-xs font-semibold py-2.5 px-4 rounded transition-all transform hover:-translate-y-0.5"
+                aria-label={social.label}
+                title={social.label}
+                className="grid h-10 w-10 place-items-center rounded-full border border-slate-600/70 text-slate-300"
               >
-                <span className="text-sm">{social.icon}</span>
-                <span>{social.label}</span>
-              </a>
-            ))}
+                <SocialIcon className="h-4 w-4" aria-hidden="true" />
+              </span>
+              );
+            })}
           </div>
         </div>
 
