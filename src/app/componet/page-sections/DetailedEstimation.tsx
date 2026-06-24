@@ -129,7 +129,7 @@ export default function DetailedEstimation({ onNavigate, onOpenEstimationTool }:
                   <div className="w-6 h-6 mb-0.5 flex items-center justify-center animate-[spin_12s_linear_infinite]">
                     <OZLogoBadge className="w-full h-full text-slate-950" />
                   </div>
-                  <span className="text-2xl font-black font-display tracking-tight leading-none">25+</span>
+                  <span className="text-2xl font-black font-display tracking-tight leading-none">15+</span>
                   <span className="text-[9px] uppercase font-mono font-extrabold tracking-widest text-center mt-1 leading-none">Years Exp</span>
                 </div>
               </div>

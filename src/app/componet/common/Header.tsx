@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+'use client';
+import React, { useState, useEffect } from 'react';
 import Logo from './Logo';
 import { PageRoute } from '@/types';
 import { ChevronDown, Menu, X, Phone, Mail, ArrowRight } from 'lucide-react';
@@ -11,14 +12,24 @@ interface HeaderProps {
 export default function Header({ currentPath, onNavigate }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(true);
 
-  // Nav items from Pic 2
+  // Lock body scroll when sidebar open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [isMobileMenuOpen]);
+
   const navItems = [
     { label: 'Home', path: 'home' as PageRoute },
     { label: 'About Us', path: 'about-us' as PageRoute },
-    { 
-      label: 'Services', 
-      path: 'services' as PageRoute, 
+    {
+      label: 'Services',
+      path: 'services' as PageRoute,
       hasDropdown: true,
       subItems: [
         { label: 'Quantity Take-Off & BOQs', link: 'quantity-takeoff' },
@@ -37,11 +48,17 @@ export default function Header({ currentPath, onNavigate }: HeaderProps) {
     onNavigate(path);
     setIsMobileMenuOpen(false);
     setIsServicesDropdownOpen(false);
+    setIsMobileServicesOpen(false);
+  };
+
+  const closeSidebar = () => {
+    setIsMobileMenuOpen(false);
+    setIsMobileServicesOpen(false);
   };
 
   return (
     <header className="sticky top-0 z-50 bg-[#2e3f4f] text-white border-b border-white/5 shadow-md" id="oz-solution-header">
-      {/* Upper bar for contact (extra premium structure feel) */}
+      {/* Top contact bar */}
       <div className="bg-[#24323f]/90 border-b border-white/5 text-slate-300 text-xs py-2 px-4 sm:px-8 lg:px-12 hidden sm:flex justify-between items-center">
         <div className="flex items-center gap-6">
           <span className="flex items-center gap-1.5 font-mono">
@@ -62,18 +79,18 @@ export default function Header({ currentPath, onNavigate }: HeaderProps) {
         {/* Logo */}
         <Logo light={true} onNavigate={() => handleNavClick('home')} />
 
-        {/* Desktop Navigation Menu (Matching pic 2 exactly) */}
+        {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-8 font-sans">
           {navItems.map((item) => {
             if (item.hasDropdown) {
               return (
-                <div 
+                <div
                   key={item.label}
                   className="relative group py-2"
                   onMouseEnter={() => setIsServicesDropdownOpen(true)}
                   onMouseLeave={() => setIsServicesDropdownOpen(false)}
                 >
-                  <button 
+                  <button
                     onClick={() => handleNavClick(item.path)}
                     className={`flex items-center gap-1 text-[15px] font-medium transition-colors hover:text-yellow-400 cursor-pointer ${
                       currentPath === item.path ? 'text-yellow-400' : 'text-slate-100'
@@ -82,8 +99,6 @@ export default function Header({ currentPath, onNavigate }: HeaderProps) {
                     {item.label}
                     <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
                   </button>
-
-                  {/* Dropdown Menu */}
                   <div className={`absolute left-0 mt-2 w-72 bg-[#24323f] rounded-lg shadow-xl border border-white/10 overflow-hidden py-2 transform origin-top transition-all duration-200 ${
                     isServicesDropdownOpen ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'
                   }`}>
@@ -100,7 +115,6 @@ export default function Header({ currentPath, onNavigate }: HeaderProps) {
                 </div>
               );
             }
-
             return (
               <button
                 key={item.label}
@@ -115,9 +129,9 @@ export default function Header({ currentPath, onNavigate }: HeaderProps) {
           })}
         </nav>
 
-        {/* CTA Button matching image no. 2 */}
+        {/* Desktop CTA */}
         <div className="hidden lg:flex items-center">
-          <button 
+          <button
             id="header-get-in-touch"
             onClick={() => handleNavClick('contact-us')}
             className="group flex items-center bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-bold text-sm tracking-wide rounded-md overflow-hidden pl-5 transition-transform active:scale-95 duration-200 cursor-pointer"
@@ -129,57 +143,118 @@ export default function Header({ currentPath, onNavigate }: HeaderProps) {
           </button>
         </div>
 
-        {/* Mobile menu toggle button */}
+        {/* Mobile hamburger */}
         <div className="lg:hidden flex items-center">
           <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="text-slate-200 hover:text-yellow-500 focus:outline-none p-2"
-            aria-label="Toggle menu"
+            onClick={() => setIsMobileMenuOpen(true)}
+            className="text-slate-200 hover:text-yellow-500 focus:outline-none p-2 transition-colors"
+            aria-label="Open menu"
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            <Menu className="w-6 h-6" />
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer Navigation */}
-      {isMobileMenuOpen && (
-        <div className="lg:hidden bg-[#24323f] border-t border-white/5 py-4 px-4 space-y-2 animate-fadeIn">
-          {navItems.map((item) => (
-            <div key={item.label} className="border-b border-white/5 last:border-0 pb-1">
+      {/* ── Mobile Sidebar ── */}
+      {/* Backdrop */}
+      <div
+        className={`fixed inset-0 z-40 bg-black/60 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
+          isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={closeSidebar}
+        aria-hidden="true"
+      />
+
+      {/* Sidebar panel */}
+      <div
+        className={`fixed top-0 left-0 z-50 h-full w-72 bg-[#1e2c38] flex flex-col shadow-2xl transition-transform duration-300 ease-in-out lg:hidden ${
+          isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
+        {/* Sidebar header */}
+        <div className="flex items-center justify-between px-5 py-5 border-b border-white/10 bg-[#24323f]">
+          <Logo light={true} onNavigate={() => handleNavClick('home')} />
+          <button
+            onClick={closeSidebar}
+            className="text-slate-300 hover:text-yellow-400 transition-colors p-1"
+            aria-label="Close menu"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
+
+        {/* Nav links */}
+        <nav className="flex-1 overflow-y-auto py-4 px-3 space-y-1">
+          {navItems.map((item) => {
+            if (item.hasDropdown) {
+              return (
+                <div key={item.label} className="rounded-md overflow-hidden">
+                  {/* Services toggle row */}
+                  <button
+                    onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                    className={`w-full flex items-center justify-between py-3 px-4 text-sm font-semibold rounded-md transition-colors ${
+                      currentPath === item.path
+                        ? 'text-yellow-400 bg-slate-800/60'
+                        : 'text-slate-100 hover:bg-slate-700/40 hover:text-yellow-400'
+                    }`}
+                  >
+                    <span>{item.label}</span>
+                    <ChevronDown
+                      className={`w-4 h-4 text-yellow-500 transition-transform duration-300 ${
+                        isMobileServicesOpen ? 'rotate-180' : 'rotate-0'
+                      }`}
+                    />
+                  </button>
+
+                  {/* Collapsible sub-items */}
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                      isMobileServicesOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <div className="pl-4 py-1 space-y-0.5 border-l-2 border-yellow-500/40 ml-4 mt-1 mb-2">
+                      {item.subItems?.map((sub) => (
+                        <button
+                          key={sub.label}
+                          onClick={() => handleNavClick(sub.link as PageRoute)}
+                          className="w-full text-left py-2 px-3 text-xs text-slate-400 hover:text-yellow-400 hover:bg-slate-700/30 rounded-md transition-colors"
+                        >
+                          {sub.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+
+            return (
               <button
+                key={item.label}
                 onClick={() => handleNavClick(item.path)}
-                className={`w-full text-left py-2.5 px-3 rounded-md text-sm font-medium transition-colors ${
-                  currentPath === item.path ? 'text-yellow-400 bg-slate-800' : 'text-slate-200 hover:bg-slate-800/10'
+                className={`w-full text-left py-3 px-4 text-sm font-semibold rounded-md transition-colors ${
+                  currentPath === item.path
+                    ? 'text-yellow-400 bg-slate-800/60'
+                    : 'text-slate-100 hover:bg-slate-700/40 hover:text-yellow-400'
                 }`}
               >
                 {item.label}
               </button>
-              {item.hasDropdown && (
-                <div className="pl-6 py-1 space-y-1">
-                  {item.subItems?.map((sub) => (
-                    <button
-                      key={sub.label}
-                      onClick={() => handleNavClick(sub.link as PageRoute)}
-                      className="w-full text-left py-1.5 px-3 text-xs text-slate-400 hover:text-yellow-400 transition-colors"
-                    >
-                      {sub.label}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-          <div className="pt-4">
-            <button
-              onClick={() => handleNavClick('contact-us')}
-              className="w-full flex items-center justify-between bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-bold py-3 px-5 rounded-md text-sm tracking-wide transition-all"
-            >
-              <span>Get In Touch</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
+            );
+          })}
+        </nav>
+
+        {/* Sidebar footer CTA */}
+        <div className="px-4 py-5 border-t border-white/10">
+          <button
+            onClick={() => handleNavClick('contact-us')}
+            className="w-full flex items-center justify-between bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-bold py-3 px-5 rounded-md text-sm tracking-wide transition-all cursor-pointer"
+          >
+            <span>Get In Touch</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
         </div>
-      )}
+      </div>
     </header>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Search, ChevronRight, Share2, Clipboard, ArrowRight, ShieldAlert } from 'lucide-react';
 import ScrollReveal from '../common/ScrollReveal';
+import toast from 'react-hot-toast';
 
 interface BlogPost {
   title: string;
@@ -122,7 +123,10 @@ export default function Blog() {
             <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
               <span className="text-slate-400 text-xs font-sans">© 2026 OZ Solution. All rights reserved.</span>
               <button 
-                onClick={() => alert('Link copied to clipboard!')}
+                onClick={() => {
+                  navigator.clipboard.writeText(window.location.href);
+                  toast.success('Link copied to clipboard!');
+                }}
                 className="text-xs font-mono text-slate-500 hover:text-yellow-600 flex items-center gap-1 cursor-pointer"
               >
                 <Share2 className="w-4 h-4" /> Share Cost Guide

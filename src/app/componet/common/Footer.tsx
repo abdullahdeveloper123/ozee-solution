@@ -77,10 +77,10 @@ export default function Footer({ onNavigate }: FooterProps) {
             </h4>
             <div className="flex items-start gap-3 pt-2 text-sm text-slate-300 font-sans">
               <MapPin className="w-5 h-5 text-yellow-500 shrink-0 mt-0.5" />
-              <span>
-                15750 Fair Hill Way Apple Valley,<br />
-                Minnesota 55124, USA
-              </span>
+           <span>
+  1200 Brickell Avenue, Suite 800<br />
+  Miami, Florida 33131, USA
+</span>
             </div>
           </div>
 
@@ -158,9 +158,9 @@ export default function Footer({ onNavigate }: FooterProps) {
                 key={social.label}
                 aria-label={social.label}
                 title={social.label}
-                className="grid h-10 w-10 place-items-center rounded-full border border-slate-600/70 text-slate-300"
+                className="grid h-10 w-10 place-items-center rounded-full border border-slate-600/70 text-slate-300 cursor-pointer transition-all duration-300 hover:bg-yellow-500 hover:border-yellow-500 hover:text-slate-950 hover:scale-110 hover:shadow-lg hover:shadow-yellow-500/30"
               >
-                <SocialIcon className="h-4 w-4" aria-hidden="true" />
+                <SocialIcon className="h-4 w-4 transition-transform duration-300 hover:rotate-12" aria-hidden="true" />
               </span>
               );
             })}

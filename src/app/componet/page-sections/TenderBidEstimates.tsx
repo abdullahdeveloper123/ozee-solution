@@ -289,7 +289,7 @@ export default function TenderBidEstimates({ onNavigate, onOpenEstimationTool }:
                   </motion.div>
 
                   <div className="flex flex-col items-center justify-center text-center z-10">
-                    <span className="text-2xl sm:text-3xl font-display font-black leading-none tracking-tight">25+</span>
+                    <span className="text-2xl sm:text-3xl font-display font-black leading-none tracking-tight">15+</span>
                     <span className="text-[9px] uppercase font-mono font-extrabold tracking-widest mt-1 text-center leading-tight">Years Exp</span>
                     <span className="text-[7px] text-slate-800 font-sans font-bold leading-none mt-0.5 uppercase tracking-wide">Tender Bidding</span>
                   </div>

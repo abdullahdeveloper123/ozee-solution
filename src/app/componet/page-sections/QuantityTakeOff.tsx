@@ -215,7 +215,7 @@ export default function QuantityTakeOff({ onNavigate, onOpenEstimationTool }: Qu
                 </div>
 
                 {/* Experience Badge with Rotating Logo and Elements */}
-                <div className="absolute left-2 bottom-2 sm:left-4 sm:bottom-4 bg-yellow-500 text-slate-950 rounded-full shadow-2xl flex flex-col items-center justify-center w-28 h-28 z-20 border-4 border-white select-none group" id="qto-experience-badge">
+                <div className="absolute left-32 bottom-12 sm:left-74   sm:bottom-14 bg-yellow-500 text-slate-950 rounded-full shadow-2xl flex flex-col items-center justify-center w-28 h-28 z-20 border-4 border-white select-none group" id="qto-experience-badge">
                   {/* Rotating Outer Dashed/Dotted Ring */}
                   <div 
                     className="absolute inset-1.5 border-2 border-dashed border-slate-950/20 rounded-full animate-spin"
@@ -239,7 +239,7 @@ export default function QuantityTakeOff({ onNavigate, onOpenEstimationTool }: Qu
                     >
                       <OZLogoBadge className="w-full h-full text-slate-950" />
                     </div>
-                    <span className="text-xl font-black font-display tracking-tight leading-none">25+</span>
+                    <span className="text-xl font-black font-display tracking-tight leading-none">15+</span>
                     <span className="text-[8px] uppercase font-mono font-extrabold tracking-widest text-center mt-0.5 leading-none">Years Exp</span>
                   </div>
                 </div>

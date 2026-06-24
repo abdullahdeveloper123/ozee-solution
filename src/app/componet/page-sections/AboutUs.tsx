@@ -89,7 +89,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
                         Experience
                       </span>
                       <span className="block text-xl sm:text-2xl font-black text-slate-950 leading-none">
-                        25+ Yrs
+                        15+ Yrs
                       </span>
                       <span className="block font-mono text-[8px] sm:text-[9px] uppercase text-slate-900 font-semibold mt-1">
                         ★ PRECON HUB ★

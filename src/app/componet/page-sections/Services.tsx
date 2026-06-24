@@ -87,7 +87,7 @@ export default function Services({ onNavigate, onOpenEstimationTool }: ServicesP
   });
 
   return (
-    <div className="bg-[#f8fafc] text-slate-800 py-12 md:py-20" id="services-page">
+    <div className="bg-[#f8fafc] text-slate-800 pt-12 md:pt-20" id="services-page">
       <div className="w-full px-4 sm:px-8 lg:px-12 space-y-16">
         
         {/* Header Block */}
@@ -202,7 +202,7 @@ export default function Services({ onNavigate, onOpenEstimationTool }: ServicesP
       </div>
 
       {/* Infinite Scrolling Marquee ("last apr jo yellow div is par same like jis tarah home page par carsoul add keya hooya ha") */}
-      <section className="relative w-full overflow-hidden bg-yellow-500 py-5 font-display font-black text-xs text-slate-950 uppercase tracking-widest border-y border-yellow-600 select-none mt-16">
+      <section className="relative w-full overflow-hidden bg-yellow-500 py-5 font-display font-black text-xs text-slate-950 uppercase tracking-widest border-y border-yellow-600 select-none mt-5">
         <div className="flex w-max animate-[marquee_25s_linear_infinite] whitespace-nowrap">
           <div className="flex gap-12 px-6">
             <span>☀ Renovation & Remodeling</span>
