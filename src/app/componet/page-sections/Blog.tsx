@@ -23,7 +23,7 @@ export default function Blog() {
       category: 'Cost Analysis',
       date: 'June 20, 2026',
       author: 'A. Harrison, Snr Estimator',
-      img: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=650&q=80',
+      img: '/assets/blog4.jpeg',
       readTime: '6 min read',
       excerpt: 'How current tariffs and localized regional logistics constraints impact Class 1 preconstruction budgets.',
       content: 'Under current 2026 economic conditions, global tariffs and localized raw material shipping disruptions continue to put stress on domestic steel and concrete pricing indexes. For preconstruction developers, static estimates drawn during preliminary sketch-phases can trigger major cost discrepancies down the road.\n\nTo safeguard project margins, our estimating desk implements dynamic multi-zip indexing averages. This process relies on actual historical supply chain logs to anticipate material price indexes on a quarterly timeline. By utilizing this forward-pricing approach, contractors can lock in reliable supplier bids well in advance of site excavation.'
@@ -33,7 +33,7 @@ export default function Blog() {
       category: 'BIM Engineering',
       date: 'June 12, 2026',
       author: 'E. Sterling, BIM Coordinator',
-      img: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=650&q=80',
+      img: '/assets/blog5.jpg',
       readTime: '8 min read',
       excerpt: 'A comprehensive integration review detailing design coordination adjustments inside mechanical layouts.',
       content: 'Integrating cost tags directly into native 3D physical coordinate meshes is reshaping preconstruction planning. Using Autodesk Revit in tandem with in-house databases, we can dynamically link individual structural components—such as concrete columns or mechanical conduit pipes—to instant unit cost multipliers.\n\nWhen architects decide to scale height elements or modify structural thickness parameters, those geometric changes update material volumes automatically in the background. The 5D cost dashboard immediately computes the price difference, permitting developers to visualize design-to-cost deviations live during key layout sessions.'
@@ -43,7 +43,7 @@ export default function Blog() {
       category: 'Tips & Tricks',
       date: 'May 28, 2026',
       author: 'J. Miller, Civil structural Eng.',
-      img: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=650&q=80',
+      img: '/assets/blog6.jpg',
       readTime: '5 min read',
       excerpt: 'Advanced blueprint auditing tactics to optimize sheet volumes prior to certification reviews.',
       content: 'Filing certified bids with municipal authorities requires extreme structured precision. If materials do not map directly to standardized divisions, review boards can flag potential bid folders for compliance audit delays.\n\nOrganizing takeoff worksheets strictly within the 50 standardized divisions of the CSI MasterFormat ensures immediate clarity. This framework makes it easy for local subcontractors to locate and estimate specific scopes—from drywall packages to heavy civil sewage hookups.'
@@ -61,10 +61,10 @@ export default function Blog() {
       <div className="w-full px-4 sm:px-8 lg:px-12 space-y-12">
         
         {/* Banner Block */}
-        <ScrollReveal variant="fadeUp" duration={0.8} className="text-center max-w-2xl mx-auto space-y-4">
+        <ScrollReveal variant="fadeUp" duration={0.8} className="text-center max-w-2xl  sm:max-w-4xl mx-auto space-y-4">
           <span className="text-yellow-600 font-mono text-xs uppercase tracking-widest font-bold">INSIGHT PORTAL</span>
           <h1 className="font-display font-extrabold text-3xl sm:text-5xl text-slate-900 tracking-tight leading-tight">
-            Antenity Preconstruction Blueprints
+            OZ Solution Preconstruction Blueprints
           </h1>
           <p className="text-sm text-slate-500 font-sans leading-relaxed">
             Stay updated with real-time industry updates, CSI standard unit-pricing tutorials, and architectural modeling guides.

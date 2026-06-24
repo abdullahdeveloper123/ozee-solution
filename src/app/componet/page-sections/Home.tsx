@@ -153,7 +153,7 @@ export default function Home({ onNavigate, onOpenEstimationTool }: HomeProps) {
       title: "Detailed & Conceptual Cost Estimation",
       short: "From initial napkin sketches to complete development schematics, we map clear financial parameters.",
       desc: "We analyze historical unit indicators and local index rates to deliver reliable early-phase budgets (Class 5 to Class 1 estimates) to help developers validate project viability prior to design commitment.",
-      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=650&q=80",
+      image: "/assets/Detailed & Conceptual Cost Estimation.png",
       tag: "Budgets & Auditing"
     },
     {
@@ -161,7 +161,7 @@ export default function Home({ onNavigate, onOpenEstimationTool }: HomeProps) {
       title: "MEP & HVAC Cost Estimation",
       short: "Dedicated calculations for complex mechanical, electrical, plumbing, and fire safety systems.",
       desc: "Our specialized MEP division reviews heavy industrial layouts, conduits, electrical switchgear, ductwork, and specialized piping systems using updated market indexes.",
-      image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=650&q=80",
+      image: "/assets/MEP & HVAC Cost Estimation.png",
       tag: "System Audits"
     },
     {
@@ -177,7 +177,7 @@ export default function Home({ onNavigate, onOpenEstimationTool }: HomeProps) {
       title: "Tender & Bid Estimates",
       short: "We build competitive, and financially sound bids with complete clarity for contractors.",
       desc: "Comprehensive bid support including detailed tender preparation, cost breakdowns, margin planning, risk assessment, and full proposal documentation support.",
-      image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=650&q=80",
+      image: "/assets/Tender & Bid Estimates.jpeg",
       tag: "Strategic Bidding"
     },
     {
@@ -348,7 +348,7 @@ export default function Home({ onNavigate, onOpenEstimationTool }: HomeProps) {
                 <div className="gloss-tl" />
                 <div className="gloss-br" />
                 <img 
-                  src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=400&q=80" 
+                  src="https://ozestimatesolutions.com.au/wp-content/uploads/2024/11/confident-architect-reading-architecture-plan-building-standing-work-place-near-table-scaled-e1782304384555.jpg" 
                   alt="Construction sunset scaffold" 
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
@@ -361,7 +361,7 @@ export default function Home({ onNavigate, onOpenEstimationTool }: HomeProps) {
               <div className="gloss-tl" />
               <div className="gloss-br" />
               <img 
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" 
+                src="https://ozestimatesolutions.com.au/wp-content/uploads/2024/11/civil-engineer-construction-worker-manager-holding-digital-tablet-blueprints-talking-planing-about-construction-site-cooperation-teamwork-concept-scaled.jpg" 
                 alt="Construction crane sunset" 
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
@@ -438,7 +438,7 @@ export default function Home({ onNavigate, onOpenEstimationTool }: HomeProps) {
                   <div className="gloss-tl" />
                   <div className="gloss-br" />
                   <img 
-                    src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=400&q=80" 
+                    src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=400&q=80" 
                     alt="Construction engineer" 
                     className="object-cover h-52 w-full group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
@@ -448,7 +448,7 @@ export default function Home({ onNavigate, onOpenEstimationTool }: HomeProps) {
                   <div className="gloss-tl" />
                   <div className="gloss-br" />
                   <img 
-                    src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=400&q=80" 
+                    src="https://ozestimatesolutions.com.au/wp-content/uploads/2024/11/building-construction-worker-site-with-architect-scaled.jpg" 
                     alt="Scaffolding layout" 
                     className="object-cover h-64 w-full group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
@@ -460,7 +460,7 @@ export default function Home({ onNavigate, onOpenEstimationTool }: HomeProps) {
                   <div className="gloss-tl" />
                   <div className="gloss-br" />
                   <img 
-                    src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=400&q=80" 
+                    src="https://ozestimatesolutions.com.au/wp-content/uploads/2024/11/man-making-measurements-building-scaled.jpg" 
                     alt="Blueprint design blueprints" 
                     className="object-cover h-64 w-full group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
@@ -746,7 +746,7 @@ export default function Home({ onNavigate, onOpenEstimationTool }: HomeProps) {
                 <div className="gloss-tl" />
                 <div className="gloss-br" />
                 <img 
-                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" 
+                  src="/assets/Project Types.jpeg" 
                   alt="USA Construction workers with blueprints" 
                   className="w-full h-[450px] object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
@@ -1136,7 +1136,7 @@ export default function Home({ onNavigate, onOpenEstimationTool }: HomeProps) {
                   <div className="gloss-tl" />
                   <div className="gloss-br" />
                   <img 
-                    src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=450&q=80" 
+                    src="/assets/FAQS.jpg" 
                     alt="Industrial layout" 
                     className="object-cover h-64 w-full group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
@@ -1472,19 +1472,19 @@ export default function Home({ onNavigate, onOpenEstimationTool }: HomeProps) {
               {
                 title: 'Adapting Estimating Protocols to USA Volatile Structural Steels in 2026',
                 date: 'June 20, 2026',
-                img: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=400&q=80',
+                img: '/assets/blog1.jpg',
                 desc: 'How current tariffs and localized regional logistics constraints impact Class 1 preconstruction budgets.'
               },
               {
                 title: 'BIM 5D: Visualizing Real-time Concrete Cost Variations Across Revit Platforms',
                 date: 'June 12, 2026',
-                img: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=400&q=80',
+                img: '/assets/blog2.jpg',
                 desc: 'A comprehensive integration review detailing design coordination adjustments inside mechanical layouts.'
               },
               {
                 title: 'CSI Division Masterclass: Restructuring Quantity takeoffs for Fast Bid Submittals',
                 date: 'May 28, 2026',
-                img: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=400&q=80',
+                img: '/assets/blog3.jpg',
                 desc: 'Advanced blueprint auditing tactics to optimize sheet volumes prior to certification reviews.'
               }
             ].map((insight, idx) => (
