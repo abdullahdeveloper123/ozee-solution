@@ -543,7 +543,7 @@ export default function QuantityTakeOff({ onNavigate, onOpenEstimationTool }: Qu
               </div>
               <div className="space-y-1 font-sans">
                 <span className="text-[10px] text-slate-400 font-mono uppercase tracking-widest block">Direct Phone</span>
-                <span className="text-sm font-bold text-slate-100 block">+1 (507) 778 1624</span>
+                <span className="text-sm font-bold text-slate-100 block"> +1 (508) 888 1927</span>
               </div>
             </ScrollReveal>
 

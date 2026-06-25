@@ -212,7 +212,7 @@ const policySections = [
           <p className="font-display text-lg font-semibold text-slate-950">OZ Solution</p>
           <p>Website: www.ozsolution.com</p>
           <p>Email: info@ozsolution.com</p>
-          <p>Phone: +1 (507) 778 1624</p>
+          <p>Phone: +1 (508) 888 1927 </p>
         </div>
       </div>
     )
@@ -535,7 +535,7 @@ export default function PrivacyPolicy() {
                     <div>
                       <h3 className="font-display text-sm font-semibold uppercase tracking-wide text-slate-950">Phone Number</h3>
                       <a href="tel:+15077781624" className="mt-1 block text-slate-600 transition hover:text-yellow-600">
-                        +1 (507) 778 1624
+                         +1 (508) 888 1927
                       </a>
                     </div>
                   </div>

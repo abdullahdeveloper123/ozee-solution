@@ -95,7 +95,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                 className="flex items-center gap-3 text-sm text-slate-300 hover:text-yellow-400 transition-colors font-mono"
               >
                 <Phone className="w-4 h-4 text-yellow-500" />
-                +1 (507) 778 1624
+                +1 (508) 888 1927
               </a>
               <a 
                 href="mailto:info@ozsolution.com" 
@@ -180,9 +180,9 @@ export default function Footer({ onNavigate }: FooterProps) {
               </button>
             ))}
           </div>
-          <div className="text-xs text-slate-500 font-sans text-center lg:text-right">
-            Copyright © 2026 All Rights Reserved The Marketing Manic
-          </div>
+<div className="text-xs text-slate-500 font-sans text-center lg:text-right">
+  Copyright © {new Date().getFullYear()} All Rights Reserved The OZ Solution
+</div>
         </div>
 
       </div>

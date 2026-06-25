@@ -8,8 +8,8 @@ const contactDetails = [
   {
     icon: Phone,
     label: 'Phone number',
-    value: '+1 (507) 778 1624',
-    href: 'tel:+15077781624',
+    value: ' +1 (508) 888 1927',
+    href: 'tel: +15088881927',
   },
   {
     icon: Mail,

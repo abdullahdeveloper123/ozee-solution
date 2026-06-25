@@ -612,7 +612,7 @@ export default function DetailedEstimation({ onNavigate, onOpenEstimationTool }:
               <div className="space-y-0.5">
                 <span className="text-[10px] uppercase font-mono tracking-widest text-slate-400 block">Immediate Quotations</span>
                 <a href="tel:+15077781624" className="text-sm sm:text-base font-sans font-bold hover:text-yellow-400 transition-colors">
-                  +1 (507) 778 1624
+                   +1 (508) 888 1927
                 </a>
               </div>
             </ScrollReveal>

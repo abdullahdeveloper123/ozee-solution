@@ -63,7 +63,7 @@ export default function Header({ currentPath, onNavigate }: HeaderProps) {
         <div className="flex items-center gap-6">
           <span className="flex items-center gap-1.5 font-mono">
             <Phone className="w-3.5 h-3.5 text-yellow-500" />
-            +1 (507) 778 1624
+           +1 (508) 888 1927
           </span>
           <span className="flex items-center gap-1.5 font-mono">
             <Mail className="w-3.5 h-3.5 text-yellow-500" />

@@ -1123,7 +1123,7 @@ export default function Home({ onNavigate, onOpenEstimationTool }: HomeProps) {
                 <div className="p-4 bg-[#141b25] rounded-xl border border-slate-700 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div className="space-y-1">
                     <span className="text-[10px] text-slate-400 uppercase font-mono tracking-wider">USA Technical Desk</span>
-                    <a href="tel:+15077781624" className="text-sm font-mono text-yellow-400 font-bold block">+1 (507) 778 1624</a>
+                    <a href="tel:+15077781624" className="text-sm font-mono text-yellow-400 font-bold block"> +1 (508) 888 1927</a>
                   </div>
                   <button 
                     onClick={() => onNavigate('contact-us')}
