@@ -463,7 +463,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
       {/* 6. Ready to Plan Your Project (Dark Call to Action) */}
       <section 
         className="py-20 bg-[#141b25] text-white relative overflow-hidden text-center"
-        style={{
+        style={{ 
           backgroundImage: `linear-gradient(rgba(20, 27, 37, 0.96), rgba(20, 27, 37, 0.96)), url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h80v80H0z' fill='none'/%3E%3Cpath d='M0 40 L40 0 L80 40 L40 80 Z' stroke='rgba(255,255,255,0.015)' stroke-width='1' fill='none'/%3E%3C/svg%3E")`
         }}
         id="about-cta-footer"
